@@ -18,14 +18,11 @@ class handler(BaseHTTPRequestHandler):
     
     data = r.json()
 
-    postal_code = []
     print(data)
-    for zip_data in data:
-        place_info = zip_data["places"]
-        postal_code.append(place_info)
-    # message = str(postal_code)        
+ 
+    message = f'State: {data['places'][0]['state']} City: {data['places'][0]['place name']}'       
+    print(message)
 
-    # message = "Please give me a postal code to find"
 
     self.send_response(200)
     self.send_header('Content-type', 'text/plain')
