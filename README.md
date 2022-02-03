@@ -9,7 +9,7 @@
 
 - EX: https://serverless-ten-indol.vercel.app/api/zip_code?post_code=90210
 
-- [PR Link]()
+- [PR Link](https://github.com/ponceedi000/serverless/pull/1)
 ## Credits and Colaborations
 - Brandon Mizutani
 - Brandon Gonzalez(TA)
