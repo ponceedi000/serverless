@@ -13,7 +13,9 @@ class handler(BaseHTTPRequestHandler):
 
     
     url = 'https://api.zippopotam.us/us/'
+    print(dic)
     r = requests.get(url + dic['post code'])
+    
     data = r.json()
 
     postal_code = []
