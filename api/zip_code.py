@@ -21,10 +21,10 @@ class handler(BaseHTTPRequestHandler):
             postal_code.append(place_info)
         message = str(postal_code)        
     else:
-        message = ''
-        for key, val in dic.items():
-            message += key
-        # message = "Please give me a postal code to find"
+        # message = ''
+        # for key, val in dic.items():
+        #     message += key
+        message = "Please give me a postal code to find"
 
     self.send_response(200)
     self.send_header('Content-type', 'text/plain')
