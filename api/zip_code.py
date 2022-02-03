@@ -11,26 +11,24 @@ class handler(BaseHTTPRequestHandler):
     dic = dict(query_string_list)
 
 
-    if "post code" in dic:
-        url = 'https://api.zippopotam.us/us/'
-        r = requests.get(url + dic['post code'])
-        data = r.json()
-        postal_code = []
-        for zip_data in data:
-            place_info = zip_data["places"]
-            postal_code.append(place_info)
-        message = str(postal_code)        
-    else:
-        # message = ''
-        # for key, val in dic.items():
-        #     message += key
-        message = "Please give me a postal code to find"
+    
+    url = 'https://api.zippopotam.us/us/'
+    r = requests.get(url + dic['post code'])
+    data = r.json()
+
+    postal_code = []
+    for zip_data in data:
+        place_info = zip_data["places"]
+        postal_code.append(place_info)
+    # message = str(postal_code)        
+
+    # message = "Please give me a postal code to find"
 
     self.send_response(200)
     self.send_header('Content-type', 'text/plain')
     self.end_headers()
 
-    self.wfile.write(message.encode())
+    # self.wfile.write(message.encode())
 
     return
 
