@@ -10,6 +10,7 @@ class handler(BaseHTTPRequestHandler):
     query_string_list = parse.parse_qsl(url_components.query)
     dic = dict(query_string_list)
 
+    print("TEST")
     if "post code" in dic:
         url = 'https://api.zippopotam.us/us/'
         r = requests.get(url + dic['zip'])
