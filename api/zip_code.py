@@ -10,17 +10,17 @@ class handler(BaseHTTPRequestHandler):
     query_string_list = parse.parse_qsl(url_components.query)
     dic = dict(query_string_list)
 
-    if "word" in dic:
-        url = 'https://api.dictionaryapi.dev/api/v2/entries/en/'
-        r = requests.get(url + dic['word'])
+    if "post code" in dic:
+        url = 'https://api.zippopotam.us/us/'
+        r = requests.get(url + dic['zip'])
         data = r.json()
-        definitions = []
-        for word_data in data:
-            definition = word_data["meanings"][0]["definitions"][0]["definition"]
-            definitions.append(definition)
-        message = str(definitions)        
+        postal_code = []
+        for zip_data in data:
+            place_info = zip_data["places"][0]
+            postal_code.append(place_info)
+        message = str(postal_code)        
     else:
-        message = "Please give me a word to define"
+        message = "Please give me a postal code to find"
 
     self.send_response(200)
     self.send_header('Content-type', 'text/plain')
