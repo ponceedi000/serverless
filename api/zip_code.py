@@ -14,7 +14,7 @@ class handler(BaseHTTPRequestHandler):
     
     url = 'https://api.zippopotam.us/us/'
     print(dic)
-    r = requests.get(url + dic['post code'])
+    r = requests.get(url + dic['post_code'])
     
     data = r.json()
 
