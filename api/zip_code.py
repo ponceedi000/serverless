@@ -20,7 +20,7 @@ class handler(BaseHTTPRequestHandler):
 
     print(data)
  
-    message = f'State: {data['places'][0]['state']} City: {data['places'][0]['place name']}'       
+    message = f"State: {data['places'][0]['state']} City: {data['places'][0]['place name']}"       
     print(message)
 
 
