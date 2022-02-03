@@ -13,7 +13,7 @@ class handler(BaseHTTPRequestHandler):
 
     if "post code" in dic:
         url = 'https://api.zippopotam.us/us/'
-        r = requests.get(url + dic['zip'])
+        r = requests.get(url + dic['post code'])
         data = r.json()
         postal_code = []
         for zip_data in data:
